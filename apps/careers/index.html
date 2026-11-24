@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PaperLive Careers | DevOps & Cloud Jobs</title>
+<meta name="description" content="Live DevOps, multi-cloud and SRE openings for PaperLive Learning candidates. Filter by role, location, package and experience, and apply before the deadline.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="./">PaperLive <b>Careers</b></a>
+  <div class="row" id="authArea"><button class="ghost" data-act="signin">Sign in</button><button class="pri" data-act="signup">Register</button></div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1 id="headline">Live DevOps and cloud openings</h1>
+    <form class="search" id="search" role="search">
+      <input id="qText" placeholder="Role, skill or company: DevOps, AWS, SRE…" aria-label="Role, skill or company">
+      <input id="qLoc" placeholder="Location" aria-label="Location">
+      <button class="pri">Search</button>
+    </form>
+  </div>
+</section>
+
+<main class="wrap layout">
+  <aside class="filters" id="filters" aria-label="Filters">
+    <div class="row sp"><h2>Filters</h2><button class="link" data-act="clear">Clear all</button></div>
+    <fieldset><legend>Your experience</legend>
+      <div class="row"><input type="range" id="fExp" min="-1" max="15" step="1" value="-1" aria-label="Years of experience"><output id="fExpOut" class="nw">Any</output></div>
+      <p class="hint">Shows roles you're eligible for.</p></fieldset>
+    <fieldset><legend>Location</legend><div id="fLoc" class="checks"></div></fieldset>
+    <fieldset><legend>Work mode</legend><div class="checks" id="fMode">
+      <label><input type="checkbox" value="Remote"> Remote</label><label><input type="checkbox" value="Hybrid"> Hybrid</label><label><input type="checkbox" value="Onsite"> Onsite</label></div></fieldset>
+    <fieldset><legend>Minimum package</legend>
+      <select id="fPkg"><option value="0">Any</option><option value="5">₹5 LPA+</option><option value="8">₹8 LPA+</option><option value="12">₹12 LPA+</option><option value="16">₹16 LPA+</option><option value="20">₹20 LPA+</option><option value="30">₹30 LPA+</option></select></fieldset>
+    <fieldset><legend>Role type</legend><div id="fRole" class="checks"></div></fieldset>
+    <fieldset><legend>Closing</legend><select id="fClose"><option value="0">Any time</option><option value="6">Within 6 hours</option><option value="12">Within 12 hours</option><option value="24">Within 24 hours</option></select></fieldset>
+  </aside>
+
+  <section class="results">
+    <div class="row sp resbar"><p id="count" class="mut">Loading openings…</p>
+      <div class="row"><button class="ghost sm mobile-only" data-act="filters">Filters</button>
+      <label class="nw sortl">Sort <select id="sort"><option value="deadline">Closing soonest</option><option value="new">Newest</option><option value="pkg">Highest package</option></select></label></div></div>
+    <div id="jobs" class="jobs"></div>
+    <section id="mine" class="hide"><h2>My applications</h2><div id="mineList"></div></section>
+  </section>
+</main>
+<footer class="foot wrap"><p>PaperLive Learning · Placement cell · <a href="https://paperlive.in">paperlive.in</a></p></footer>
+
+<dialog id="dlg"><div class="dlg" id="dlgBody"></div></dialog>
+<script src="config.js"></script>
+<script type="module" src="app.js"></script>
+</body></html>
